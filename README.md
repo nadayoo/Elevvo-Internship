@@ -80,10 +80,6 @@ $env:UV_THREADPOOL_SIZE=8; npm start
 UV_THREADPOOL_SIZE=8 npm start
 ```
 
-| Run | `UV_THREADPOOL_SIZE` | Execution time |
-|-----|----------------------|----------------|
-| Default | 4 | _fill in_ ms |
-| Bonus | 8 | _fill in_ ms |
 
 ### Topics covered
 V8 and libuv architecture, strict TypeScript, `Promise.allSettled`, domain interfaces, asynchronous error isolation.
@@ -333,7 +329,7 @@ curl "http://localhost:3000/api/products/search?q=something%20to%20listen%20to%2
 | Request | `cached` | `took_ms` |
 |---------|----------|-----------|
 | First query (cold: wakes Neon, opens TLS connections, embeds the query) | `false` | ~3000 ms |
-| Same query again (warm) | `true` | _fill in_ ms |
+| Same query again (warm) | `true` | 78 ms |
 
 - Cache keys are built from the normalized query (lowercased, trimmed, whitespace collapsed).
 - On a cache hit the embedding model and database are never touched.
